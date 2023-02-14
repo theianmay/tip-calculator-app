@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
         binding.costOfServiceEditText.setOnKeyListener { view, keyCode, _ ->
             handleKeyEvent(view, keyCode)
         }
-        }
+    }
 
     private fun calculateTip() {
         val stringInTextField = binding.costOfServiceEditText.text.toString()
@@ -45,6 +45,7 @@ class MainActivity : AppCompatActivity() {
         val formattedTip = NumberFormat.getCurrencyInstance().format(tip)
         binding.tipResult.text = getString(R.string.tip_amount, formattedTip)
     }
+
     private fun handleKeyEvent(view: View, keyCode: Int): Boolean {
         if (keyCode == KeyEvent.KEYCODE_ENTER) {
             // Hide the keyboard
